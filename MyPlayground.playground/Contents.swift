@@ -226,5 +226,157 @@ enum Mood: Int {
 }
 
 
+//Arithmetic operators
+
+let firstScore = 12
+let secondScore = 4
+
+let total = firstScore + secondScore
+let difference = firstScore - secondScore
+
+let product = firstScore * secondScore
+let divided = firstScore / secondScore
+
+let remainder = 13 % secondScore
 
 
+let value: Double = 90000000000000001
+let value1: Int = 90000000000000001
+
+
+//Why does Swift have a dedicated division remainder operator?
+
+let weeks = 465 / 7
+print("There are \(weeks) weeks until the event.")
+let weeks1: Double = 465 / 7
+print("There are \(weeks1) weeks until the event.")
+
+let weeks2 = 465 / 7
+let days = 465 % 7
+print("There are \(weeks2) weeks and \(days) days until the event.")
+let number = 465
+let isMultiple = number.isMultiple(of: 7)
+
+
+//Operator overloading
+
+let meaningOfLife1 = 42
+let doubleMeaning = 42 + 42
+
+let fakers = "Fakers gonna"
+let action = fakers + "fake"
+
+let firstHalf = ["John", "Paul"]
+let secondHalf = ["George", "Ringo"]
+let beatles1 = firstHalf + secondHalf
+
+//Compound assignment operators
+
+var score1 = 95
+score1 -= 5
+
+var quote1 = "The rain in Spain falls mainly on the "
+quote1 += "Spaniards"
+
+
+//Comparison operators
+
+let firstScore1 = 6
+let secondScore1 = 4
+
+firstScore1 == secondScore1
+firstScore1 != secondScore1
+firstScore1 < secondScore1
+firstScore1 >= secondScore1
+
+"Taylor" <= "Swift"
+
+//How does Swift let us compare many types of data?
+
+let firstName = "Paul"
+let secondName = "Sophie"
+
+let firstAge = 40
+let secondAge = 10
+
+print(firstName == secondName)
+print(firstName != secondName)
+print(firstName < secondName)
+print(firstName >= secondName)
+
+print(firstAge == secondAge)
+print(firstAge != secondAge)
+print(firstAge < secondAge)
+print(firstAge >= secondAge)
+
+
+enum Sizes: Comparable {
+    case small
+    case medium
+    case large
+}
+
+let first = Sizes.small
+let second = Sizes.large
+print(first < second)
+
+
+//Conditions
+
+let firstCard = 11
+let secondCard = 10
+
+if firstCard + secondCard == 21 {
+    print("Blackjack!")
+} else  {
+    print("Regular cards")
+}
+
+if firstCard + secondCard == 2 {
+    print("Aces - lucky!")
+}else if firstCard + secondCard == 21 {
+    print("Blackjack!")
+} else {
+    print("Regular cards")
+}
+
+
+//What’s the difference between if and else if?
+
+let scorex = 9001
+
+if scorex > 9000 {
+    print("It's over 9000!")
+}
+
+if scorex > 9000 {
+    print("It's over 9000!")
+}
+if scorex <= 9000 {
+    print("It's not over 9000!")
+}
+
+if scorex > 9000 {
+    print("It's over 9000!")
+} else {
+    print("It's not over 9000!")
+}
+
+
+if scorex > 9000 {
+    print("It's over 9000!")
+} else {
+    if scorex == 9000 {
+        print("It's exactly 9000!")
+    } else {
+        print("It's not over 9000!")
+    }
+}
+
+if scorex > 9000 {
+    print("It's over 9000!")
+} else if scorex == 9000 {
+    print("It's exactly 9000!")
+} else {
+    print("It's not over 9000!")
+}
