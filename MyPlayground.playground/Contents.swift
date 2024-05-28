@@ -380,3 +380,89 @@ if scorex > 9000 {
 } else {
     print("It's not over 9000!")
 }
+
+
+//Combining conditions
+
+let age1 = 12
+let age2 = 21
+
+if age1 > 18 && age2 > 18 {
+    print("Both are over 18")
+}
+
+
+if age1 > 18 || age2 > 18 {
+    print("At least one is over 18")
+}
+
+
+//The ternary operator
+
+let firstCard1 = 11
+let secondCard1 = 10
+print(firstCard1 == secondCard1 ? "Cards are the same" : "Cards are different")
+
+if firstCard1 == secondCard1 {
+    print("Cards are the same")
+} else {
+    print("Cards are different")
+}
+
+
+//When should you use the ternary operator in Swift?
+
+let isAuthenticated = true
+print(isAuthenticated ? "Welcome!" : "Who are you?")
+
+if isAuthenticated {
+    print("Welcome")
+} else {
+    print("Who are you?")
+}
+
+
+//Switch statements
+
+let weather = "sunny"
+
+switch weather {
+case "rain":
+    print("Bring an umbrella")
+case "snow":
+    print("Wrap up warm")
+case "sunny":
+    print("Wear sunscreen")
+    fallthrough
+default:
+    print("Enjoy you day!")
+}
+
+
+//Range operators
+
+// 1..<5 (1,2,3,4)
+// 1...5  (1,2,3,4,5)
+
+let score2 = 85
+
+switch score2 {
+case 0..<50:
+    print("You failed badly.")
+case 50..<85:
+    print("You did OK.")
+default:
+    print("You did great!")
+}
+
+
+//Why does Swift have two range operators?
+
+let names1 = ["Piper", "Alex", "Suzanne", "Gloria"]
+
+print(names1[0])
+
+print(names1[1...3])
+
+print(names1[1...])
+
