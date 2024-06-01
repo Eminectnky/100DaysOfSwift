@@ -137,3 +137,33 @@ outerLoop: for option1 in options {
         }
     }
 }
+
+//Skipping items
+
+for i in 1...10 {
+    if i % 2 == 1 {
+        continue
+    }
+    print(i)
+}
+
+//Infinite loops
+
+var counter = 0
+
+while true {
+    print(" ")
+    counter += 1
+    
+    if counter == 273 {
+        break
+    }
+}
+
+//Why would you want to make an infinite loop?
+var isAlive = false
+
+while isAlive == true {
+    print("I'm alive!")
+}
+print("I have snuffed it!")
