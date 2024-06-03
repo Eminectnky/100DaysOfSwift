@@ -154,3 +154,95 @@ func greet(_ person: String) {
     print("Hello, \(person)!")
 }
 greet("Emine")
+
+//Default parameters
+
+private var person: String = "Taylor"
+
+func greet(_person: String, nicely: Bool = true) {
+    if nicely == true {
+        print("Hello, \(person)!")
+    } else {
+        print("Oh no, it's \(person) again...")
+    }
+}
+ greet("Taylor")
+greet(_person: "Taylor", nicely: false)
+
+//When to use default parameters for functions
+
+func findDirections(from: String, to: String, route: String = "fastest", avoidHighways : Bool = false ) {
+//    code here
+}
+
+findDirections(from: "London", to: "Glasgow")
+findDirections(from: "London", to: "Glasgow", route: "scenic")
+findDirections(from: "London", to: "Glasgow", route: "scenic", avoidHighways: true)
+
+//Variadic functions
+
+print("Haters", "gonna", "hate")
+
+func square(numbers: Int...) {
+    for number in numbers {
+        print("\(number) squared is \(number * number)")
+    }
+}
+square(numbers: 1, 2, 3, 4, 5)
+
+//When to use variadic functions
+//open("photo.jpg", "recipes.txt", "myCode.swift")
+
+//Writing throwing functions
+
+enum PasswordError: Error {
+    case obvious
+}
+
+func checkPassword(_ password: String) throws -> Bool {
+    if password == "password" {
+        throw PasswordError.obvious
+    }
+    return true
+}
+
+//Running throwing functions
+
+do {
+    try checkPassword("password")
+    print("That password is good!")
+} catch {
+    print("You can't use that password.")
+}
+
+//Why does Swift make us use try before every throwing function?
+
+//
+//do {
+//    try throwingFunction1()
+//    nonThrowingFunction1()
+//    try throwingFunction2()
+//    non throwingFunction2()
+//    try throwingFunction3()
+//} catch {
+//    handle errors
+//}
+
+//inout parameters
+
+func doubleInPlace(number: inout Int) {
+    number *= 2
+}
+
+var myNum = 10
+doubleInPlace(number: &myNum)
+
+//When should you use inout parameters?
+
+//func +(leftNumber: Int, rightNumber: Int) -> Int {
+//    code here
+//}
+
+//func +=(leftNumber: inout Int, rightNumber: Int) {
+//    code here
+//}
