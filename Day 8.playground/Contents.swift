@@ -73,3 +73,62 @@ struct City {
 
 let london = City(population: 9_000_000)
 london.collectTaxes()
+
+
+//Mutating methods
+
+//When you want to change a property inside a method, you need to mark it using the mutating keyword, like this:
+
+struct Person {
+    var name: String
+    
+    mutating func makeAnonymous() {
+        name = "Anonymous"
+    }
+}
+
+var person = Person(name: "Ed")
+person.makeAnonymous()
+
+//Properties and methods of strings
+
+let string = "Do or do not , there is no try."
+
+print(string.count)
+print(string.hasPrefix("Do"))
+print(string.uppercased())
+print(string.sorted())
+
+
+//Why are strings structs in Swift?
+
+print(string.count)
+print(string.hasPrefix("Hello"))
+print(string.uppercased())
+print(string.sorted())
+
+
+//Properties and methods of arrays
+
+var toys = ["Woody"]
+print(toys.count)
+toys.append("Buzz")
+print(toys)
+toys.firstIndex(of: "Buzz")
+print(toys)
+print(toys.sorted())
+toys.remove(at: 0)
+print(toys)
+
+
+//Why do strings behave differently from arrays in Swift?
+var myString = "ds"
+
+if myString.isEmpty {
+//    code
+}
+print(myString)
+
+if myString.count == 0 {
+//    code
+}
